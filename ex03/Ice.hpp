@@ -1,29 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmilan <nmilan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/06 13:53:25 by nmilan            #+#    #+#             */
-/*   Updated: 2023/09/06 13:53:27 by nmilan           ###   ########.fr       */
+/*   Created: 2023/09/06 13:57:16 by nmilan            #+#    #+#             */
+/*   Updated: 2023/09/06 14:25:42 by nmilan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
-
-class WrongAnimal
-{
-protected:
-	std::string type;
-
-public:
-	WrongAnimal(void);
-	WrongAnimal(const WrongAnimal &src);
-	WrongAnimal& operator=(const WrongAnimal &src);
-	~WrongAnimal(void);
-
-	std::string getType(void) const;
-	void makeSound(void) const;
-};
