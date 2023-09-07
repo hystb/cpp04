@@ -20,8 +20,8 @@ private:
 	
 public:
     Brain(void);
-    Brain(const Brain &parent);
-    Brain& operator=(const Brain &parent);
+    Brain(const Brain &src);
+    Brain& operator=(const Brain &src);
     ~Brain(void);
 
 	void setIdea(std::string idea, unsigned int index);

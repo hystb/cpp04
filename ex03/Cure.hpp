@@ -11,4 +11,16 @@
 /* ************************************************************************** */
 
 #pragma once
-#include <iostream>
+#include "AMateria.hpp"
+
+class Cure : public AMateria
+{
+public:
+	Cure(void);
+	Cure(const Cure& src);
+	Cure& operator=(const Cure& src);
+	~Cure(void);
+
+	virtual Cure* clone() const;
+	virtual void use(ICharacter& target);
+};

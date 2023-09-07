@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmilan <nmilan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/06 13:57:16 by nmilan            #+#    #+#             */
-/*   Updated: 2023/09/06 14:25:42 by nmilan           ###   ########.fr       */
+/*   Created: 2023/09/06 13:57:02 by nmilan            #+#    #+#             */
+/*   Updated: 2023/09/06 14:25:39 by nmilan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include "AMateria.hpp"
+#include "ICharacter.hpp"
 
-class Ice : public AMateria
+class Character : public ICharacter
 {
+private:
+	std::string _name;
+	AMateria* _inventory[4];
+
 public:
-	Ice(void);
-	Ice(const Ice& src);
-	Ice& operator=(const Ice& src);
-	~Ice(void);
+	Character(void);
+	Character(const Character& src);
+	Character& operator=(const Character& src);
+	~Character(void);
 
-	virtual Ice* clone() const;
-	virtual void use(ICharacter& target);
+	Character(std::string name);
+
+	const std::string& getName() const;
+	void equip(AMateria* m);
+	void unequip(int idx);
+	void use(int idx, ICharacter& target);
 };
-
-
